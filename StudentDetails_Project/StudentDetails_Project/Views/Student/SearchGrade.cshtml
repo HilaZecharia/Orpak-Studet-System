@@ -1,0 +1,34 @@
+﻿@*@model StudentDetails_Project.StudentsTable*@
+@*@using StudentDetails_Project.StudentsTable*@
+@model StudentDetails_Project.Models.StudentVM
+
+@{
+    ViewBag.Title = "SearchGrade";
+}
+
+<h2>Search student's grade</h2>
+<h3>Please enter student's ID:</h3>
+
+
+@using(Html.BeginForm("SearchGrade", "Student", FormMethod.Post))
+{
+     @Html.TextBoxFor(model => model.StudentID)
+    <input type="submit" value="search" />
+}
+@{
+    var data = (StudentsTable)ViewData["student"];
+    if (data != null)
+    {
+        if (@data.GradeInEnglishCourse != null)
+        {
+            <h3>Grade is: @data.GradeInEnglishCourse</h3>
+        }
+        else
+        {
+            <h3>student not found in DB </h3>
+        }
+    }
+}
+
+
+

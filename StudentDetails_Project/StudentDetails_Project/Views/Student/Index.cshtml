@@ -1,0 +1,63 @@
+﻿@model IEnumerable<StudentDetails_Project.StudentsTable>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<link  href="~/Content/StyleSheet.css" rel="stylesheet"  />
+<h3 id="title">Student's  List:</h3>
+<table class="table" id="students">
+    <tr>
+        <th align="left">
+           student ID
+        </th>
+        <th align="left">
+            First Name
+        </th>
+        <th align="left">
+            Last Name
+        </th>
+        <th align="left">
+            Phone Number
+        </th>
+        <th align="left">
+            Grade In English Course
+        </th>
+        <th>
+        </th>    
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneNumber)
+        </td>
+        <td align="left">
+            @Html.DisplayFor(modelItem => item.GradeInEnglishCourse)
+        </td>
+        <td>
+         
+
+            @Html.ActionLink("Edit", "Edit", new { id = item.StudentID.Trim() }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.StudentID.Trim() })
+           
+          
+
+        </td>
+        
+    </tr>
+}
+
+</table>
+
+
+

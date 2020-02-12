@@ -1,0 +1,55 @@
+﻿@model StudentDetails_Project.StudentsTable
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h3>Delete Student</h3>
+<div>
+ 
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GradeInEnglishCourse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GradeInEnglishCourse)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> 
+           
+        </div>
+        <div>@Html.ActionLink("Back to List", "Index")</div>
+    }
+</div>

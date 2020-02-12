@@ -1,0 +1,13 @@
+﻿@model StudentDetails_Project.StudentsTable
+
+@{
+    ViewBag.Title = "Search";
+}
+
+<h3>Search Student's Grade</h3>
+<h4>Please enter student's ID:</h4>
+@{
+    var data = (StudentsTable)ViewData["student"];
+}
+<h2>Grade is: @data.GradeInEnglishCourse</h2>
+
